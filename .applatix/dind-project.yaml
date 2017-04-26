@@ -7,13 +7,13 @@ actions:
     name: build v1 image
     template: docker-image-build
     parameters:
-      commit: b2e7719
+      commit: c1ae674
       version: v1
   -
     name: build v2 image
     template: docker-image-build
     parameters:
-      commit: 2b5e791
+      commit: 73240e6
       version: v2
   -
     name: deploy v1 image
