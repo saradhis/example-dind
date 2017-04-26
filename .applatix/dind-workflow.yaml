@@ -9,9 +9,9 @@ inputs:
     version:
     # Encoded username and password
     docker_username:
-      default: "%%secrets.==$1$key=default$text$APoZAZHCg1VwUAfd25LViA+ZEoWhwePcyF8N/GIDGUyloFLc1FwRsnrUujJk/Fn5Oa3aiOygWEvBMZKpeCTm9u/+uzRuuJiyrZmYpepV2aLdfSOWFCEx3cd1mAwz/ZfB8rqIVh9oTWTaNDhHSj7BnHRtsOV6wCBHitCiNVC/x7wX2emfw6RZomduPBPaSIUf2F2ZxlQJq5nT6087973kriWt9zauuVLXjAWqutZmC6PTMtFPprmji1jKHA/x7eamo++J7a3TgLBIEE/L4W8iczHhWUr23JxOhpph+gDu35XJRGof9vq+l8FY/dgSdmQWT7vh8Ocop8eoxfqpYajD8FhrTHUZIuXl0f5Aq+0GYsvw1ll1Ljkqv6yK6JUfHXIun59/+O3HEb5Vnwo+qiF2N/u8BD/0qZZ8u3Y6dfQI2F01hA====%%"
+      default: "%%secrets.==$1$key=default$text$AOpQV69riv9lFzrPDgxqu+ANzGlWOiQ+PZYpUciwrEAKJJFBoaNgAjt24JG3kpCkBYlY3GlZkvzLyGZgEW+gY017CDkd92JPnHnME/LswBRMw0lH+VPa4we+8RBikubSKgVKgSHPAC8vfI/oBCT0FrAA6aQmYRtDmB4WOhF9Aic43WpsVHJH7U1Z5BHj1wdMU4xvfRj2xX+4pBMkzMLoKYO9ULzGzK91Xqu8friFqRAN09t87E+ZC6ZV/+Ym8L0sd6C/kjk60jKdOhbSoebxHdUJvFJQ3/WWZR4+Z6+GHh8SqnsDAtjF1BB8DOogsSWtEY6IEguwFtgk56NViOuxsx0PHKagL73IshOEStSQEiRJ6YrRlkqep84HH4BD9zjWZz45bY08LjvMcwRZYu59ihj5WiG6FYGumpw6cHH9L4zdTw====%%"
     docker_password:
-      default: "%%secrets.==$1$key=default$text$AIjfpCX10lVkKGUs5ra81I91ohosLPL++NzAp+08NEW1bsaOBRv+2D7swMaccr5jPTmv6TzUKdNTetpSf2R519j/pDkQ87TeETI5Pa0z9uuwlBpmwklXpcCPzXm36GA+jEGOEu0yo3CbHM6GpOYaX4rIKeRjKFIVhWGdFvW7b39S+HJTje9j60lQQq5PX25AYirqTG49vK1HFjY/ZZuGV4sbAHQSrpNKvKUp6rtZHikK8ozBAmyZiLxbrxodw24Xf1CoY54Dx4axedvX3V6/pRQBMyLcAGTcMM815O0YNIJVdW6xhCf4F4hCGhY513Nur8tPTHzjUqMfBHDbt5SfhBUIX3pIvvRvANXpaqgtko7jybqPRnxeInYX/4yn+D27SNj4Lnmlq6EIrwNTDz0i+3NtTfbDOSpeNFQY5oi55eusmA====%%"
+      default: "%%secrets.==$1$key=default$text$ACKc3+fPfWGBT6V3K2jTcM5aD9kNijL7LBQsKVDdO2BRtcRKxoWtFjPOIQcqS10b16nsjESyPn/ZBmeZ1JmS9giAV7vR2+026HlrSCAgMrNN9olpCPTkVOhJiDM9RAQzS7uiIXRtLxp+JHnwIiaRDi2lqid2UaavfzJeI6M4ua0OOjEA4X1YUpMTKgdVkq7dxu95c/XHydnZc52BhSEUxP0J60Juv9nEtTXorhpCbDxxG6FJ/JfcG5DgU0PZ5nJw/XCbM5jDi7RWXVFFGlcNt3kyMN0Jb3NBeidNpx+Kp+n+4guv5XkUmYlCO+hz9gXfa5xTEueC0BgO7D7lLgxiUJdVQEguXAJ23LOv56ywChORaIqx6JQGzRFxRF6VsNEiKG8UYZRyznEmN6p8WepDQzxaZDl55P6pTIMXWdgUGoZVdQ====%%"
 
   artifacts:
   - from: "%%code%%"
