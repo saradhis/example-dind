@@ -23,8 +23,8 @@ container:
   image: docker:1.12
   command: "cd /src &&
               docker login -u %%docker_username%% -p %%docker_password%% get.applatix.io &&
-              docker build -f Dockerfile -t get.applatix.io/demo/webserver-image:%%version%% . &&
-              docker push get.applatix.io/demo/webserver-image:%%version%%"
+              docker build -f Dockerfile -t get.applatix.io/demo/sampleapp-image:%%version%% . &&
+              docker push get.applatix.io/demo/sampleapp-image:%%version%%"
 labels:
     # Enable docker access in this container by specifying the size of graph storage needed and the amount of cpu and memory required for docker commands
     "ax_ea_docker_enable": '{ "graph-storage-name": "sampledockerapp", "graph-storage-size": "10Gi", "cpu_cores":"0.5", "mem_mib":"800"}'
