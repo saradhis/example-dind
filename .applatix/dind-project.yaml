@@ -1,0 +1,50 @@
+---
+type: project
+name: Docker in Docker
+description: Build and deploy a docker image
+actions:
+  -
+  -
+    name: build v1 image
+    template: docker-image-build
+    parameters:
+      commit: b2e7719
+      version: v1
+  -
+    name: build v2 image
+    template: docker-image-build
+    parameters:
+      commit: 2b5e791
+      version: v2
+  -
+    name: deploy v1 image
+    template: docker-image-deploy
+    parameters:
+      version: v1
+  -
+    name: deploy v2 image
+    template: docker-image-deploy
+    parameters:
+      version: v2
+  -
+    name: build and deploy v1 image
+    template: docker-image-build-approve-deploy
+    parameters:
+      version: v1
+  -
+    name: build and deploy v2 image
+    template: docker-image-build-approve-deploy
+    parameters:
+      version: v2
+ 
+
+categories: ["demo", "promoted"]
+publish:
+  branches:
+    - master
+labels:
+    publisher: Applatix    
+assets:
+    icon: "/sampleapp/icon.png"
+    publisher_icon: "/sampleapp/AX_Pub.png"
+    detail: "/sampleapp/README.md"
