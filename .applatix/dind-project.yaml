@@ -44,6 +44,6 @@ publish:
 labels:
     publisher: Applatix    
 assets:
-    icon: "icon.png"
-    publisher_icon: "AX_Pub.png"
-    detail: "README.md"
+    icon: "/icon.png"
+    publisher_icon: "/AX_Pub.png"
+    detail: "/README.md"
