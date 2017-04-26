@@ -4,7 +4,6 @@ name: Docker in Docker
 description: Build and deploy a docker image
 actions:
   -
-  -
     name: build v1 image
     template: docker-image-build
     parameters:

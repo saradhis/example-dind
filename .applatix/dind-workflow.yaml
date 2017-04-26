@@ -1,7 +1,7 @@
 ---
 type: container
-name: webserver-image-build-container
-description: build webserver image
+name: docker-image-build-container
+description: build docker image
 
 inputs:
   parameters:
@@ -21,32 +21,32 @@ container:
   # Build a docker image and push it
   # The docker:1.12 image already has the docker command installed
   image: docker:1.12
-  command: "cd /src/webserver &&
+  command: "cd /src &&
               docker login -u %%docker_username%% -p %%docker_password%% get.applatix.io &&
               docker build -f Dockerfile -t get.applatix.io/demo/webserver-image:%%version%% . &&
               docker push get.applatix.io/demo/webserver-image:%%version%%"
 labels:
     # Enable docker access in this container by specifying the size of graph storage needed and the amount of cpu and memory required for docker commands
-    "ax_ea_docker_enable": '{ "graph-storage-name": "webserver", "graph-storage-size": "10Gi", "cpu_cores":"0.5", "mem_mib":"800"}'
+    "ax_ea_docker_enable": '{ "graph-storage-name": "sampledockerapp", "graph-storage-size": "10Gi", "cpu_cores":"0.5", "mem_mib":"800"}'
 
 ---
 type: container
-name: webserver-image-container
-description: Run a node based web server.
+name: sampleapp-image-container
+description: Run a sample app (node based web server.)
 inputs:
   parameters:
     version:
 container:
-  image: "get.applatix.io/demo/webserver-image:%%version%%"
+  image: "get.applatix.io/demo/sampleapp-image:%%version%%"
   command: "cd /usr/src/app && npm install && npm start"
 
 ---
 type: deployment
-name: webserver-image-deployment
+name: docker-image-deployment
 inputs:
   parameters:
     appname:
-      default: "webserver"
+      default: "sampleapp"
     domain:
       default: " "
     version:
@@ -63,12 +63,12 @@ external_routes:
       - 0.0.0.0/0
 
 containers:
-  - webserver:
-      template: webserver-image-container
+  - sampleapp:
+      template: sampleapp-image-container
 
 ---
 type: workflow
-name: webserver-image-build
+name: docker-image-build
 inputs:
   parameters:
     commit:
@@ -82,13 +82,13 @@ steps:
   - checkout:
       template: axscm-checkout
   - build:
-      template: webserver-image-build-container
+      template: docker-image-build-container
       parameters:
         code: "%%steps.checkout.code%%"
 
 ---
 type: workflow
-name: webserver-image-deploy
+name: docker-image-deploy
 inputs:
   parameters:
     version:
@@ -96,11 +96,11 @@ inputs:
 
 steps:
   - deploy:
-      template: webserver-image-deployment
+      template: docker-image-deployment
 
 ---
 type: workflow
-name: webserver-image-build-approve-deploy
+name: docker-image-build-approve-deploy
 inputs:
   parameters:
     commit:
@@ -122,11 +122,11 @@ steps:
   - checkout:
       template: axscm-checkout
   - build:
-      template: webserver-image-build-container
+      template: docker-image-build-container
       parameters:
         code: "%%steps.checkout.code%%"
   - approval:
       template: axapproval
   - deploy:
-      template: webserver-image-deployment
+      template: docker-image-deployment
 
